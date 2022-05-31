@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
 	switchBtn: {
 		width: "170px",
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 const SwitchAccess = ({ currPath }) => {
 	const classes = useStyles();
+	const history = useHistory();
 
 	const content =
 		currPath === "/login"
@@ -54,8 +55,7 @@ const SwitchAccess = ({ currPath }) => {
 				size="large"
 				variant="contained"
 				type="submit"
-				href={content.path}
-				to={content.path}
+				onClick={() => history.push(content.path)}
 				className={classes.switchBtn}
 			>
 				{content.btnText}
