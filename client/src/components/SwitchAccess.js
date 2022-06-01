@@ -1,25 +1,41 @@
 import React from 'react';
-import { Box, Typography, Button } from '@material-ui/core';
+import { Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   switchBtn: {
     width: '170px',
     height: '54px',
-    marginLeft: '30px',
-    marginRight: '42px',
     padding: '15px 40px ',
     backgroundColor: 'white',
     boxShadow: '0px 2px 12px rgba(74, 106, 149, 0.2)',
     color: theme.palette.primary.main,
     whiteSpace: 'nowrap',
+    marginRight: '40px',
+    [theme.breakpoints.down('xs')]: {
+      margin: '0',
+    },
+  },
+  btnBlock: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
   },
   switchBlock: {
     marginTop: '30px',
+    marginBottom: '15%',
     width: '100%',
   },
   switchText: {
-    marginLeft: '20px',
+    fontSize: '14px',
+    textAlign: 'right',
+    marginRight: '30px',
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center',
+      marginBottom: '10px',
+      marginRight: '0',
+    },
   },
 }));
 
@@ -41,26 +57,29 @@ const SwitchAccess = ({ currPath }) => {
         };
 
   return (
-    <Box
+    <Grid
+      container
       display="flex"
-      justifyContent="flex-end"
       alignItems="center"
       className={classes.switchBlock}
-      mb="15%"
     >
-      <Typography className={classes.switchText} color="secondary">
-        {content.mainText}
-      </Typography>
-      <Button
-        size="large"
-        variant="contained"
-        type="submit"
-        onClick={() => history.push(content.path)}
-        className={classes.switchBtn}
-      >
-        {content.btnText}
-      </Button>
-    </Box>
+      <Grid item xs={12} sm={8}>
+        <Typography className={classes.switchText} color="secondary">
+          {content.mainText}
+        </Typography>
+      </Grid>
+      <Grid item xs={12} sm={4} className={classes.btnBlock}>
+        <Button
+          size="large"
+          variant="contained"
+          type="submit"
+          onClick={() => history.push(content.path)}
+          className={classes.switchBtn}
+        >
+          {content.btnText}
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 

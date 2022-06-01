@@ -12,19 +12,23 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: '40vw',
     marginBottom: '60px',
+    fontSize: '18px',
     [theme.breakpoints.down('xs')]: {
       width: '60vw',
     },
   },
   titleText: {
-    fontSize: 30,
+    fontSize: 26,
     fontWeight: 'bold',
     marginBottom: '35px',
   },
-
+  inputLabel: {
+    fontSize: '20px',
+  },
   submitBtn: {
     width: '160px',
     height: '56px',
+    fontSize: '16px',
   },
 }));
 
@@ -42,8 +46,7 @@ const Login = ({ handleLogin }) => {
               label="Username"
               name="username"
               type="text"
-              inputProps={{ style: { fontSize: 18 } }}
-              InputLabelProps={{ style: { fontSize: 20 } }}
+              InputLabelProps={{ className: classes.inputLabel }}
               className={classes.form}
             />
           </FormControl>
@@ -56,9 +59,8 @@ const Login = ({ handleLogin }) => {
             name="password"
             InputProps={{
               endAdornment: <Button color="primary">Forgot?</Button>,
-              style: { fontSize: 18 },
             }}
-            InputLabelProps={{ style: { fontSize: 20 } }}
+            InputLabelProps={{ className: classes.inputLabel }}
             className={classes.form}
           />
         </FormControl>
