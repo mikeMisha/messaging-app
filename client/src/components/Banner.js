@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     background: 'linear-gradient(#3A8DFF, #86B9FF)',
     opacity: 0.85,
-    padding: '0 20% 0 20%',
+    padding: '0 15% 0 15%',
+    paddingTop: '45%',
   },
   background: {
     backgroundImage: 'url("/images/bg-img.png")',
@@ -34,11 +35,10 @@ const Banner = () => {
         container
         direction="column"
         alignItems="center"
-        justifyContent="center"
         className={classes.block}
       >
         <Grid>
-          <img src="/images/bubble.svg" alt="chat bubble" width="80px" />
+          <img src="/images/bubble.svg" alt="chat bubble" width="70px" />
         </Grid>
         <Typography align="center" className={classes.text}>
           Converse with anyone with any language

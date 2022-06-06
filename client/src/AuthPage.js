@@ -6,6 +6,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import SwitchAccess from './components/SwitchAccess';
 import { Grid } from '@material-ui/core';
+import AuthForm from './components/AuthForm';
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
@@ -68,16 +69,21 @@ const AuthPage = ({ user, login, register }) => {
             alignItems="center"
             className={classes.formContainer}
           >
-            {currPath === '/login' && login ? (
-              <Login user={user} handleLogin={handleLogin} />
-            ) : (
-              <Signup
-                user={user}
-                register={register}
-                handleRegister={handleRegister}
-                formErrorMessage={formErrorMessage}
-              />
-            )}
+            <AuthForm
+              onSubmit={currPath === '/login' ? handleLogin : handleRegister}
+              isLogin={currPath === '/login'}
+            >
+              {currPath === '/login' && login ? (
+                <Login user={user} handleLogin={handleLogin} />
+              ) : (
+                <Signup
+                  user={user}
+                  register={register}
+                  handleRegister={handleRegister}
+                  formErrorMessage={formErrorMessage}
+                />
+              )}
+            </AuthForm>
           </Grid>
         </Grid>
       </Grid>

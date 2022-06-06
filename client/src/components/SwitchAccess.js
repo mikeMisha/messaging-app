@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   switchBtn: {
-    width: '170px',
+    width: '150px',
     height: '54px',
     padding: '15px 40px ',
     backgroundColor: 'white',
