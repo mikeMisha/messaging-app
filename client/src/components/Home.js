@@ -91,6 +91,7 @@ const Home = ({ user, logout }) => {
         } else {
           return convo;
         }
+
       })
     );
   }, []);
@@ -118,6 +119,7 @@ const Home = ({ user, logout }) => {
         } else {
           return convo;
         }
+
       })
     );
   }, []);
@@ -188,6 +190,7 @@ const Home = ({ user, logout }) => {
     const fetchConversations = async () => {
       try {
         const { data } = await axios.get('/api/conversations');
+
         data.forEach((convo) =>
           convo.messages.sort(
             (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
