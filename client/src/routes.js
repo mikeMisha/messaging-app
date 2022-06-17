@@ -83,7 +83,11 @@ const Routes = (props) => {
   }, [user?.error]);
 
   if (user?.isFetching) {
-    return <div>Loading...</div>;
+    return (
+      <div class="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   return (
