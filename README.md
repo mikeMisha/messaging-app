@@ -2,6 +2,14 @@
 
 A one-to-one realtime chat app.
 
+## [Demo](https://messaging-app-online.netlify.app/)
+
+accounts for demo:
+```
+Username: "thomas" or "santiago"
+password: 123456
+```
+
 ## Local Setup
 
 Create the PostgreSQL database (these instructions may need to be adapted for your operating system):
