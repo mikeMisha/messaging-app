@@ -39,12 +39,7 @@ const AuthPage = ({ user, login, register }) => {
     const username = formElements.username.value;
     const email = formElements.email.value;
     const password = formElements.password.value;
-    const confirmPassword = formElements.confirmPassword.value;
 
-    if (password !== confirmPassword) {
-      setFormErrorMessage({ confirmPassword: 'Passwords must match' });
-      return;
-    }
     await register({ username, email, password });
   };
 

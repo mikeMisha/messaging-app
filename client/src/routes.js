@@ -84,7 +84,7 @@ const Routes = (props) => {
 
   if (user?.isFetching) {
     return (
-      <div class="loader-wrapper">
+      <div className="loader-wrapper">
         <div className="loader"></div>
       </div>
     );
