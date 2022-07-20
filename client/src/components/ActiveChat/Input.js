@@ -65,8 +65,8 @@ const Input = ({ otherUser, conversationId, user, postMessage }) => {
   };
 
   const handleSubmit = async (event) => {
-    if (!text) return;
     event.preventDefault();
+    if (!text) return;
     setSelectedFiles([]);
     let attachments = null;
     if (selectedFiles) {
